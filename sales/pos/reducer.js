@@ -1,7 +1,8 @@
 import { combineReducers } from "redux"
 
-import layout from "./layout/layoutReducer"
+import products from "./main/product/reducer.js"
 
 export default combineReducers({
-  layout,
+  products,
+
 })

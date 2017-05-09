@@ -3,16 +3,23 @@
  */
 import React from 'react';
 
+import Product from './product/product.jsx'
+import Table from './table/table.jsx'
 
-export default class Layout extends React.Component {
+export default class Main extends React.Component {
+
+    
 
     // Main Layout
     render(){
 
-        return <div className="body-container">
+        return <div style={{'padding':'0'}} className="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 
-                    TOMAR!
-            </div>
+                        <Product></Product>
+                        <Table></Table>
+
+                </div>
+
 
     }
 

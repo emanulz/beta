@@ -5,10 +5,12 @@ import { Provider } from "react-redux"
 
 
 import Main from './main/main.jsx'
+import Sidebar from './sidebar/sidebar.jsx'
+import Footer from './footer/footer.jsx'
 //import PeopleContainer from './people/components/PeopleContainer.jsx'
 
 
-//import store from "./store.js"
+import store from "./store.js"
 
 // ReactDOM.render(
 //         <Provider store={store}>
@@ -21,12 +23,23 @@ import Main from './main/main.jsx'
 // );
 
 
-ReactDOM.render(
+ReactDOM.render(<Provider store={store}>
+                    <div style={{'marginTop':'5px'}} className="row blur-div">
 
+                        <Main></Main>
+                        <Sidebar></Sidebar>
 
-    <Main></Main>,
+                    </div>
+                </Provider>,
 
+                document.getElementById('main-content')
+);
 
+ReactDOM.render(<Provider store={store}>
 
-    document.getElementById('main-content')
+                    <Footer></Footer>
+
+                </Provider>,
+
+    document.getElementById('footer')
 );
