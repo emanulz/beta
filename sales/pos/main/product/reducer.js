@@ -30,16 +30,6 @@ export default function reducer(state=stateConst, action) {
             break;
         }//case
 
-        case "PRODUCT_SELECTED": {
-            return {
-              ...state,
-              productsFetching: false,
-              productsFected: true,
-              products: action.payload,
-            }
-            break;
-        }//case
-
     }// switch
 
     return state //default return

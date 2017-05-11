@@ -6,6 +6,7 @@ import { Provider } from "react-redux"
 
 import Main from './main/main.jsx'
 import Sidebar from './sidebar/sidebar.jsx'
+import SearchClient from './search/clients/searchPanel.jsx'
 import Footer from './footer/footer.jsx'
 //import PeopleContainer from './people/components/PeopleContainer.jsx'
 
@@ -28,6 +29,7 @@ ReactDOM.render(<Provider store={store}>
 
                         <Main></Main>
                         <Sidebar></Sidebar>
+                        <SearchClient></SearchClient>
 
                     </div>
                 </Provider>,

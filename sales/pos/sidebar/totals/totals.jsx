@@ -3,7 +3,15 @@
  */
 import React from 'react';
 
+import { connect } from "react-redux"
 
+
+@connect((store) => {
+  return {
+    subtotal: store.cart.cartSubtotal,
+    iv: store.cart.cartIv,
+  };
+})
 export default class Totals extends React.Component {
 
     // Main Layout
@@ -22,12 +30,12 @@ export default class Totals extends React.Component {
                         </tr>
                         <tr>
                             <th>Sub-Total:</th>
-                            <td className="price sale_subtotal">₡ 0</td>
+                            <td className="price sale_subtotal">₡ {this.props.subtotal.toFixed(2)}</td>
 
                         </tr>
                         <tr>
                             <th>IV:</th>
-                            <td className="price sale_iv_amount">₡ 0.00</td>
+                            <td className="price sale_iv_amount">₡ {this.props.iv.toFixed(2)}</td>
                         </tr>
                     </tbody>
                     </table>

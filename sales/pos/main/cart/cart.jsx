@@ -1,10 +1,10 @@
 /*
  * Module dependencies
  */
-import React from 'react';
+import React from 'react'
+import CartItems from './cartItems.jsx'
 
-
-export default class Table extends React.Component {
+export default class Cart extends React.Component {
 
     // Main Layout
     render(){
@@ -23,9 +23,7 @@ export default class Table extends React.Component {
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody className="table-body">
-
-                            </tbody>
+                            <CartItems></CartItems>
                         </table>
                  </div>
 

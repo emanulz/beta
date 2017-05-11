@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-import Client from './client/client.jsx'
+import Client from './clients/clients.jsx'
 import Totals from './totals/totals.jsx'
 import Buttons from './buttons/buttons.jsx'
 

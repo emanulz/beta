@@ -9,12 +9,13 @@ import { fetchProducts, productSelected } from "./actions"
 @connect((store) => {
   return {
     products: store.products.products,
-    inCart: store.cart.items
+    inCart: store.cart.cartItems,
   };
 })
 export default class Product extends React.Component {
 
     componentWillMount() {
+
       this.props.dispatch(fetchProducts())//fetch products before mount, send dispatch to reducer.
     }
 
@@ -26,7 +27,7 @@ export default class Product extends React.Component {
             let qty = ev.target.value.split('*')[1]
             qty = (isNaN(qty)) ? 1 : parseFloat(qty)//if no qty sets to 1
 
-            this.props.dispatch(productSelected(code, qty, this.props.products))// dispatchs action according to result
+            this.props.dispatch(productSelected(code, qty, this.props.products, this.props.inCart))// dispatchs action according to result
         }
 
     }
