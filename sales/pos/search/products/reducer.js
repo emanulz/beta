@@ -1,23 +1,23 @@
 const stateConst = {
     visible:false,
-    clientsMatched:[],
+    productsMatched:[],
 }
 
 export default function reducer(state=stateConst, action) {
 
     switch (action.type) {
 
-        case "CLIENT_SHOW_PANEL": {
+        case "PRODUCT_SHOW_PANEL": {
             return {...state, visible: true}
         }//case
-        case "CLIENT_HIDE_PANEL": {
+        case "PRODUCT_HIDE_PANEL": {
             return {...state, visible: false}
         }//case
-        case "CLIENT_SEARCH_SUCCESS": {
-            return {...state, clientsMatched: action.payload}
+        case "PRODUCT_SEARCH_SUCCESS": {
+            return {...state, productsMatched: action.payload}
         }//case
-        case "CLIENT_SEARCH_FAIL": {
-            return {...state, clientsMatched: []}
+        case "PRODUCT_SEARCH_FAIL": {
+            return {...state, productsMatched: []}
         }//case
 
 

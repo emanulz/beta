@@ -4,12 +4,14 @@
 import React from 'react';
 import { connect } from "react-redux"
 
-import { fetchProducts, productSelected } from "./actions"
+import { fetchProducts, productSelected, searchProduct } from "./actions"
 
 @connect((store) => {
   return {
     products: store.products.products,
-    inCart: store.cart.cartItems,
+    itemsInCart: store.cart.cartItems,
+    inputVal : store.products.inputVal,
+    globalDiscount : store.cart.globalDiscount
   };
 })
 export default class Product extends React.Component {
@@ -17,6 +19,20 @@ export default class Product extends React.Component {
     componentWillMount() {
 
       this.props.dispatch(fetchProducts())//fetch products before mount, send dispatch to reducer.
+    }
+
+    componentDidMount(){
+        this.codeInput.focus();
+    }
+
+    componentDidUpdate(){
+        this.codeInput.focus();
+    }
+
+    searchProductClick(){
+
+        this.props.dispatch(searchProduct())
+
     }
 
     inputKeyPress(ev){
@@ -27,7 +43,10 @@ export default class Product extends React.Component {
             let qty = ev.target.value.split('*')[1]
             qty = (isNaN(qty)) ? 1 : parseFloat(qty)//if no qty sets to 1
 
-            this.props.dispatch(productSelected(code, qty, this.props.products, this.props.inCart))// dispatchs action according to result
+            this.props.dispatch(productSelected(code, qty, this.props.products, this.props.itemsInCart, this.props.globalDiscount))
+        }
+        else{
+            this.props.dispatch({type: "SET_PRODUCT_FIELD_VALUE", payload: ev.target.value})
         }
 
     }
@@ -38,8 +57,13 @@ export default class Product extends React.Component {
 
             return <div className="bg-white left-item form-group"><span><b>Producto:</b></span>
                         <div className="inner-addon right-addon"><i style={{'paddingRight':'60px'}} className="fa fa-barcode"></i>
-                        <button style={{'height':'48px', 'width':'48px'}} className="btn btn-success product-search-btn"><span><i style={{'paddingBottom':'8px'}} className="fa fa-search"></i></span></button>
-                        <input onKeyDown={this.inputKeyPress.bind(this)} type="text" placeholder="Ingrese el Código del Producto" className="form-control input-lg product_code_field mousetrap"/>
+                        <button onClick={this.searchProductClick.bind(this)} style={{'height':'48px', 'width':'48px'}} className="btn btn-success product-search-btn">
+                            <span><i style={{'paddingBottom':'8px'}} className="fa fa-search"></i></span>
+                        </button>
+                        <input onKeyDown={this.inputKeyPress.bind(this)} value={this.props.inputVal} onChange={this.inputKeyPress.bind(this)}
+                               ref={(input) => { this.codeInput = input }}
+                               type="text" placeholder="Ingrese el Código del Producto"
+                               className="form-control input-lg product_code_field mousetrap"/>
                         </div>
                     </div>
 

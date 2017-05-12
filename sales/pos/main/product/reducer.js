@@ -1,8 +1,11 @@
+
 const stateConst = {
     productsFetching:false,
     productsFected:false,
     productsFetchError:'',
     products: {},
+    inputVal:'',
+
 }
 
 export default function reducer(state=stateConst, action) {
@@ -29,6 +32,15 @@ export default function reducer(state=stateConst, action) {
             }
             break;
         }//case
+
+        case "SET_PRODUCT_FIELD_VALUE": {
+            return {
+              ...state,
+              inputVal: action.payload,
+            }
+            break;
+        }//case
+
 
     }// switch
 
