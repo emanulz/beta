@@ -21,6 +21,21 @@ export default function reducer(state=stateConst, action) {
                 }
         }//case
 
+        case "REMOVE_FROM_CART": {
+
+            let newCart = [...state.cartItems]
+
+            newCart.splice(action.payload, 1)
+
+            let itemsLeftInCart = (newCart.length) ? true : false
+
+            return {...state,
+                    cartHasItems:itemsLeftInCart,
+                    cartItems: newCart
+                }
+        }//case
+
+
         case "UPDATE_CART": {
 
             let newCart = [...state.cartItems]

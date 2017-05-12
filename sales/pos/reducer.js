@@ -6,6 +6,7 @@ import clients from "./sidebar/clients/reducer.js"
 import searchClients from "./search/clients/reducer.js"
 import searchProducts from "./search/products/reducer.js"
 import messages from "./messages/reducer.js"
+import pay from './pay/reducer.js'
 
 export default combineReducers({
   products,
@@ -14,5 +15,6 @@ export default combineReducers({
   searchClients,
   searchProducts,
   messages,
+  pay,
 
 })

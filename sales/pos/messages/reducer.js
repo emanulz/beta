@@ -16,7 +16,7 @@ export default function reducer(state=stateConst, action) {
 
 
         case "PRODUCT_IN_CART_NOT_FOUND": {
-            alertify.alert('ERROR AL AGREGAR DESCUENTO!', 'Hubo un error al ingresar el descuento,por favor intente de nuevo, si el error persiste comuníquese con soporte técnico.')
+            alertify.alert('ERROR!', 'Hubo un error al encontrar el producto en la lista de productos agregados,por favor intente de nuevo, si el error persiste comuníquese con soporte técnico.')
             return {...state, messages: true}
         }//case
 

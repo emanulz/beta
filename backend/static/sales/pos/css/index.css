@@ -153,7 +153,69 @@ th {
 .btn-default:hover{
     background-color: #666666;
     color: white;
+
 }
+
+/***************************/
+/* Pay Panel POS from here */
+/***************************/
+.pay-panel{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1500px;
+    left: 0;
+    z-index: 15;
+    background-color: rgba(145, 145, 145, 0.67);
+    transition: all 0.5s ease-in-out;
+
+}
+
+.pay-panel.is-visible{
+
+    position: absolute;
+    top: 0;
+    z-index: 15;
+
+}
+
+.pay-panel-main{
+
+    position: absolute;;
+    width: 80%;
+    left:10%;
+    background-color: rgb(198, 195, 195);
+    bottom: 0;
+    top: 0;
+
+}
+
+.pay-panel-header{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    font-family: inherit;
+    font-weight: bold;
+    color: white;
+    background-color: #6F7E95;
+    line-height: 50px;
+}
+
+.pay-panel-header i{
+    position: absolute;
+    right: 5px;
+    top:2px;
+    cursor: pointer;
+
+}
+
+
+/***************************/
+/* Pay Panel POS until here */
+/***************************/
 
 @media (min-width: 768px) {
     .bg-white{
@@ -175,6 +237,7 @@ th {
         font-size: 100%;
     }
 
+
 }
 
 @media (min-width: 1200px) {
@@ -187,6 +250,17 @@ th {
     }
     .table-totals{
         font-size: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .pay-panel-main{
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0;
     }
 
 }

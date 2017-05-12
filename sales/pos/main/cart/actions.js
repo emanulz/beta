@@ -33,5 +33,16 @@ export function updateTotals(inCart){
                                                   taxes:taxes, total:total,
                                                   discountTotal:discountTotal,
                                                   subTotalNoDiscount:subTotalNoDiscount}}
+}
 
+// Finds a code in the cart and sends a dispatch to remove it from cart based on index
+export function removeFromCart(itemsInCart, code){
+
+    const indexInCart = itemsInCart.findIndex(item => item.product.code == code)//checks if product exists
+
+    let res = (indexInCart == -1 )//if not exists dispatch Not Found, if exists check if already in cart
+            ? {type: "PRODUCT_IN_CART_NOT_FOUND", payload: -1}
+            : {type: "REMOVE_FROM_CART", payload: indexInCart}
+
+    return res
 }

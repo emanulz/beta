@@ -12,6 +12,7 @@ import Sidebar from './sidebar/sidebar.jsx'
 import SearchClient from './search/clients/searchPanel.jsx'
 import SearchProduct from './search/products/searchPanel.jsx'
 import Footer from './footer/footer.jsx'
+import PayPanel from './pay/payPanel.jsx'
 //import PeopleContainer from './people/components/PeopleContainer.jsx'
 
 
@@ -35,6 +36,7 @@ ReactDOM.render(<Provider store={store}>
                         <Sidebar></Sidebar>
                         <SearchClient></SearchClient>
                         <SearchProduct></SearchProduct>
+                        <PayPanel></PayPanel>
 
                     </div>
                 </Provider>,

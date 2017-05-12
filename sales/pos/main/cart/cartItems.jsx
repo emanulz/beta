@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { connect } from "react-redux"
-import { updateTotals } from './actions'
+import { updateTotals, removeFromCart } from './actions'
 import { updateItemDiscount } from '../product/actions'
 
 @connect((store) => {
@@ -31,6 +31,12 @@ export default class CartItems extends React.Component {
 
     }
 
+    removeItem(code, ev){
+
+        this.props.dispatch(removeFromCart(this.props.inCart, code))
+
+    }
+
 
     // Render the items in cart using table rows
 
@@ -51,7 +57,9 @@ export default class CartItems extends React.Component {
                         </td>
                         <td> {taxesText} </td>
                         <td> ₡ {item.totalWithIv.toFixed(2)} </td>
-                        <td> - </td>
+                        <td>
+                            <i onClick={this.removeItem.bind(this, item.product.code)} className="fa fa-minus-square" aria-hidden="true" style={{cursor:'pointer',}}></i>
+                        </td>
                       </tr>
             })
 
