@@ -28,7 +28,7 @@ DEBUG = True
 ADMINS = [('Emanuel Zuniga', 'emanuelziga@gmail.com'), ]
 
 
-ALLOWED_HOSTS = ['35.165.154.94', '127.0.0.1', 'localhost', 'app.fudesemillas.net', ]
+ALLOWED_HOSTS = ['35.165.154.94', '127.0.0.1', 'localhost', 'app.fudesemillas.net', '192.168.9.106', ]
 
 
 # Application definition

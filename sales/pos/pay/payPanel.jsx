@@ -1,6 +1,10 @@
 import React from 'react'
 import { connect } from "react-redux"
 
+import PayMethod from './payMethod.jsx'
+import PayCash from './payCahs.jsx'
+import PaySideBar from './paySideBar.jsx'
+
 @connect((store) => {
   return {panelVisible: store.pay.isVisible};
 })
@@ -21,6 +25,16 @@ export default class PayPanel extends React.Component{
                     <div className='pay-panel-header'>
                         Registrar Pago
                         <i onClick={this.hidePanel.bind(this)} className="fa fa-times" aria-hidden="true"></i>
+                    </div>
+
+                    <PayMethod></PayMethod>
+
+                    <div className='pay-area-container' >
+
+                        <PayCash></PayCash>
+
+                        <PaySideBar></PaySideBar>
+
                     </div>
 
                 </div>

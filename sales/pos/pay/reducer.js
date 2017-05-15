@@ -1,5 +1,5 @@
 const stateConst = {
-    isVisible:false,
+    isVisible:true,
 }
 
 export default function reducer(state=stateConst, action) {
