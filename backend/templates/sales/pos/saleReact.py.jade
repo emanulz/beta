@@ -10,6 +10,9 @@
 
 |{% block breadcrumbs %}
 |<div class="breadcrumbs col-xs-12">
+|<div class="float-left" style="margin: 3px 15px 0 0">
+|    <span class="button js-toggle-main-menu"><i class="fa fa-bars"></i> <span class="text">Menu</span></span>
+|</div>
 |<a href="/">Inicio</a> &nbsp;  &rsaquo; &nbsp;  <span>Punto de Venta</span>
 |<div id="user-tools" class="pull-right" style="margin-right: 50px;">
 |       {% block welcome-msg %}
@@ -30,13 +33,15 @@
 
 #main-content
 
-| {% endblock %}
-
 | {% block footer %}
 
 #footer.footer
 
 | {% endblock %}
+
+| {% endblock %}
+
+
 
 | {% block js %}
 |   <script src="{% static 'public/js/layout_main.js' %}"></script>

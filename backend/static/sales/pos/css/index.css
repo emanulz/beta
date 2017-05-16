@@ -167,8 +167,9 @@ th {
     left: 0;
     z-index: 15;
     background-color: rgba(145, 145, 145, 0.67);
+    background-size:100% 100%;
     transition: all 0.5s ease-in-out;
-    min-height: 680px;
+
 
 }
 
@@ -188,7 +189,22 @@ th {
     background-color: rgb(198, 195, 195);
     bottom: 0;
     top: 0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-width:80%;
 
+}
+
+
+.pay-panel-main::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-height: 500px) {
+    .pay-panel-main::-webkit-scrollbar {
+        all:unset;
+    }
 }
 
 .pay-panel-header{
@@ -264,8 +280,10 @@ th {
     top: 200px;
     left: 5%;
     width: 90%;
-    height: 70%;
+    height: calc(100% - 210px);
+    min-height: 280px;
     display: inline-block;
+
 
 }
 
@@ -300,6 +318,7 @@ th {
     top: 50px;
     left: 15px;
     width: 100%;
+
 }
 
 .pay-method-body-content input{
@@ -426,6 +445,7 @@ th {
 
     .pay-area-container{
         top:165px;
+        min-height: 500px;
     }
 
     .pay-method-body{

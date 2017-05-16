@@ -20,20 +20,13 @@
 <body>
 
 <nav canvas="" style="text-align: center">
-    <div>
-        <div class="float-left" style="margin:20px 0 0 40px">
-            <span class="button js-toggle-main-menu"><i class="fa fa-bars"></i> <span class="text">Menu</span></span>
-        </div>
-    {% if user.profile.company.logo %}
-        <a href="/"><img id="logo" src="/{{ user.profile.company.logo }}" alt="POS" style="margin-right: 12%; width: 200px;"></a>
-    {% else %}
-        <a href="/" id="nologo">{{ user.profile.company.commercial_name }}</a>
-    {% endif %}
 
-    </div>
 
     {% block breadcrumbs %}
         <div class="breadcrumbs col-xs-12">
+            <div class="float-left" style="margin: 3px 0 0 0">
+                <span class="button js-toggle-main-menu"><i class="fa fa-bars"></i> <span class="text">Menu</span></span>
+            </div>
             <div id="user-tools" class="pull-right" style="margin-right: 50px;">
                 {% block welcome-msg %}
                 {% trans 'Welcome,' %}
@@ -74,6 +67,10 @@
                 {% block object-tools %}{% endblock %}
                 {{ content }}
 
+                {% block footer %}
+
+                {% endblock %}
+
                 {% endblock %}
                 {% block sidebar %}{% endblock %}
                 <br class="clear" />
@@ -82,9 +79,7 @@
 
 </div>
 
-{% block footer %}
 
-{% endblock %}
 
 
 <div off-canvas="main-menu left reveal">
