@@ -38,7 +38,7 @@ export default class searchForm extends React.Component {
         return  <form action="" className="col-sm-12 form-horizontal">
                     <div className="form-group">
                         <div className="col-xs-12">
-                            <label for="product-search-input">Búsqueda por Código:</label>
+                            <label for="product-search-input">Búsqueda por Descripción:</label>
                         </div>
                         <div className="col-xs-7 col-sm-8">
                             <input onKeyPress={this.inputKeyPress.bind(this)} onChange={this.inputKeyPress.bind(this)} type="text" style={{'width':'100%'}} id="product-search-input" className="form-control"/>

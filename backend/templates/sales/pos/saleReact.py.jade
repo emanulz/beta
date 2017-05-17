@@ -10,11 +10,12 @@
 
 |{% block breadcrumbs %}
 |<div class="breadcrumbs col-xs-12">
-|<div class="float-left" style="margin: 3px 15px 0 0">
+|<div class="float-left menu-sidebar-toggle" >
 |    <span class="button js-toggle-main-menu"><i class="fa fa-bars"></i> <span class="text">Menu</span></span>
 |</div>
+|<div class="breadcrumbs-text">
 |<a href="/">Inicio</a> &nbsp;  &rsaquo; &nbsp;  <span>Punto de Venta</span>
-|<div id="user-tools" class="pull-right" style="margin-right: 50px;">
+|<div id="user-tools" class="pull-right">
 |       {% block welcome-msg %}
 |        {% trans 'Welcome,' %}
 |        <strong>{% firstof user.get_short_name user.get_username %}</strong>.
@@ -26,6 +27,7 @@
 |        <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
 |        {% endblock %}
 |    </div>
+|</div>
 |</div>
 |{% endblock %}
 

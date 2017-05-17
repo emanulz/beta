@@ -17,7 +17,7 @@ export default class Footer extends React.Component {
 
         return <div className="col-xs-12 col-sm-8">
                   <div>
-                    <h1 className="sale-total-div"><span className="sale_total price">₡ {this.props.total.toFixed(2)}</span></h1>
+                    <h1 className="sale-total-div"><span className="sale_total price">₡ {this.props.total.formatMoney(2,',','.')}</span></h1>
                   </div>
                </div>
 

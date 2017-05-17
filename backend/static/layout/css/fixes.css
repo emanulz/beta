@@ -7,10 +7,20 @@
     background: dimgray;
 }
 
+.breadcrumbs-text{
 
+    margin-left:60px;
+}
 
 .submit-row a.deletelink{
     height: 15px;
+}
+
+.menu-sidebar-toggle{
+    margin: 3px 0 0 0;
+    position:absolute;
+    top: 1px;
+    left:20px;
 }
 
 @media (max-width: 611px) {
@@ -22,3 +32,11 @@
 
 }
 
+@media (max-width: 413px) {
+
+    .breadcrumbs-text{
+
+        margin-left:20px;
+    }
+
+}

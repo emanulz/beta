@@ -931,9 +931,9 @@ div.breadcrumbs a:hover
 
 .container-wrapper
 {
-    height: calc( 100% - 20px);
-    min-height: calc( 100% - 20px);
-    overflow-y: scroll;
+    height: calc( 100% - 20px );
+    min-height: calc( 100% -20px );
+    overflow-y: auto;
 
 }
 

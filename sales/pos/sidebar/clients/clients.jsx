@@ -25,7 +25,7 @@ export default class Clients extends React.Component {
 
             let code = ev.target.value //Split val [0] is code [1] is qty
             this.props.dispatch(clientSelected(code, this.props.clients))// dispatchs action according to result
-            
+
         }
 
     }
@@ -49,8 +49,15 @@ export default class Clients extends React.Component {
                        : 'fa fa-times-circle'
 
         return <div style={{'padding':'0'}} className="col-xs-12">
-                <div style={{'height':'160px', 'paddingBottom':'0', 'marginBottom':'0'}} className="bg-white right-item"><span><b>Datos del Cliente:
-                    <span><i onClick={this.searchClientClick.bind(this)} className="fa fa-edit btn-client-search"></i></span></b></span><br/><br/>
+                <div style={{'height':'160px', 'paddingBottom':'0', 'marginBottom':'0'}} className="bg-white right-item">
+                    <span><b>
+                    Datos del Cliente: <span>
+                                        <i onClick={this.searchClientClick.bind(this)} className="fa fa-edit btn-client-search">
+
+                                        </i>
+                                    </span>
+                    </b></span>
+                    <br/><br/>
                     <div>
                         <div style={{'padding':'0'}} className="col-xs-2"><img src="/static/img/profile.jpg" className="avatar btn-client-search"/></div>
 

@@ -31,6 +31,13 @@ export default class CartItems extends React.Component {
 
     }
 
+    discountInputOnBlur(code, ev){
+
+        let discount = (ev.target.value) ? ev.target.value : 0
+        this.props.dispatch(updateItemDiscount(this.props.inCart, code, discount, this.props.globalDiscount))
+
+    }
+
     removeItem(code, ev){
 
         this.props.dispatch(removeFromCart(this.props.inCart, code))
@@ -51,12 +58,16 @@ export default class CartItems extends React.Component {
                         <td> {item.product.code} </td>
                         <td> {item.product.description} </td>
                         <td> {item.qty} </td>
-                        <td> ₡ {parseFloat(item.product.price).toFixed(2)} </td>
+                        <td> ₡ {parseFloat(item.product.price).formatMoney(2,',','.')} </td>
                         <td style={{'padding':'0'}}>
-                            <input onKeyPress={this.discountInputKeyPress.bind(this, item.product.code)} type="number" className="form-control" style={{'width':'65px', 'height':'37px' }} />
+                            <input
+                                onKeyPress={this.discountInputKeyPress.bind(this, item.product.code)}
+                                onBlur={this.discountInputOnBlur.bind(this, item.product.code)}
+                                type="number" className="form-control"
+                                style={{'width':'55px', 'height':'37px' }} />
                         </td>
                         <td> {taxesText} </td>
-                        <td> ₡ {item.totalWithIv.toFixed(2)} </td>
+                        <td> ₡ {item.totalWithIv.formatMoney(2,',','.')} </td>
                         <td>
                             <i onClick={this.removeItem.bind(this, item.product.code)} className="fa fa-minus-square" aria-hidden="true" style={{cursor:'pointer',}}></i>
                         </td>
