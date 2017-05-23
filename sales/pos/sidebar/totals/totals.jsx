@@ -24,6 +24,10 @@ export default class Totals extends React.Component {
         this.state = {discountVal: 0};
     }
 
+    showInvoicePanel(){
+        this.props.dispatch({ type:'SHOW_INVOICE_PANEL', payload:-1})
+    }
+
 
     inputKeyPress(ev){
         //if Key pressed id Enter
@@ -84,7 +88,7 @@ export default class Totals extends React.Component {
                             <td className="price sale_iv_amount">₡ {this.props.taxes.formatMoney(2,',','.')}</td>
                         </tr>
                         <tr>
-                            <th>Total:</th>
+                            <th onClick={this.showInvoicePanel.bind(this)} >Total:</th>
                             <td className="price sale_subtotal">₡ {this.props.total.formatMoney(2,',','.')}</td>
 
                         </tr>

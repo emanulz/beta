@@ -1,12 +1,18 @@
 import React from 'react'
 import { connect } from "react-redux"
 
-import PayMethod from './payMethod.jsx'
-import PayCash from './payCahs.jsx'
-import PaySideBar from './paySideBar.jsx'
+import PayMethod from './components/payMethod.jsx'
+import PayCash from './components/payCahs.jsx'
+import PayCard from './components/payCard.jsx'
+import PayCredit from './components/payCredit.jsx'
+import PayOther from './components/payOther.jsx'
+import PaySideBar from './components/paySideBar.jsx'
 
 @connect((store) => {
-  return {panelVisible: store.pay.isVisible};
+  return {
+            panelVisible: store.pay.isVisible,
+            payMethod: store.pay.payMethod,
+  };
 })
 export default class PayPanel extends React.Component{
 
@@ -19,6 +25,32 @@ export default class PayPanel extends React.Component{
 
         let isVisible = (this.props.panelVisible) ? 'pay-panel is-visible' : 'pay-panel'
 
+        let payMethod = ''
+        switch (this.props.payMethod) {
+
+            case "CASH": {
+                payMethod = <PayCash></PayCash>
+                break
+            }//case
+
+            case "CARD": {
+                payMethod = <PayCard></PayCard>
+                break
+            }//case
+
+            case "CREDIT": {
+                payMethod = <PayCredit></PayCredit>
+                break
+            }//case
+
+            case "OTHER": {
+                payMethod = <PayOther></PayOther>
+                break
+            }//case
+
+        }// switch
+
+
         return <div className={isVisible}>
 
                 <div className='pay-panel-main'>
@@ -29,9 +61,9 @@ export default class PayPanel extends React.Component{
 
                     <PayMethod></PayMethod>
 
-                    <div className='pay-area-container' >
+                    <div className='pay-area-container'>
 
-                        <PayCash></PayCash>
+                        {payMethod}
 
                         <PaySideBar></PaySideBar>
 

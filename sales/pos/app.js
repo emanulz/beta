@@ -13,7 +13,8 @@ import SearchClient from './search/clients/searchPanel.jsx'
 import SearchProduct from './search/products/searchPanel.jsx'
 import Footer from './footer/footer.jsx'
 import PayPanel from './pay/payPanel.jsx'
-//import PeopleContainer from './people/components/PeopleContainer.jsx'
+import InvoicePanel from './invoice/InvoicePanel/invoicePanel.jsx'
+
 
 
 import store from "./store.js"
@@ -37,6 +38,7 @@ ReactDOM.render(<Provider store={store}>
                         <SearchClient></SearchClient>
                         <SearchProduct></SearchProduct>
                         <PayPanel></PayPanel>
+                        <InvoicePanel></InvoicePanel>
 
                     </div>
                 </Provider>,

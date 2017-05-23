@@ -1,12 +1,20 @@
 import React from 'react'
 import { connect } from "react-redux"
+import {updateStoreCashAmount} from '../actions.js'
+
 
 @connect((store) => {
   return {
+      cashAmount: store.pay.cashAmount,
 
   };
 })
 export default class PayCash extends React.Component{
+
+    payAmountChanged(ev){
+
+        this.props.dispatch(updateStoreCashAmount(ev.target.value))
+    }
 
     render(){
 
@@ -18,7 +26,7 @@ export default class PayCash extends React.Component{
 
 
                     <div className='pay-tag left'>EFECTIVO:</div>
-                    <input type='Number' className='form-control'></input>
+                    <input onChange={this.payAmountChanged.bind(this)} type='Number' className='form-control'></input>
 
                     <br/>
                     <br/>

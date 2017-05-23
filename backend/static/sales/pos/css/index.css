@@ -1,6 +1,4 @@
 
-
-
 .table-product-selected {
     background-color: #cacaca !important;
     color:#000;
@@ -167,12 +165,12 @@ th {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: -1500px;
+    top: -100%;
     left: 0;
     z-index: 15;
     background-color: rgba(145, 145, 145, 0.67);
     background-size:100% 100%;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
 
 }
@@ -190,7 +188,7 @@ th {
     position: absolute;;
     width: 80%;
     left:10%;
-    background-color: rgb(198, 195, 195);
+    background-color: rgb(214, 214, 214);
     bottom: 0;
     top: 0;
     height: 100%;
@@ -315,6 +313,7 @@ th {
 
 .pay-method-body-content{
     position: relative;
+    display: block;
     top: 50px;
     left: 15px;
     width: 100%;
@@ -322,10 +321,15 @@ th {
 }
 
 .pay-method-body-content input{
-    position: absolute;
-    width: 90%;
+    position: relative;
+    width: 50%;
     height: 50px;
     font-size: 20px;
+    margin-left: 20px;
+}
+
+.pay-method-body-content input.form-control{
+    display: inline-block;
 }
 
 .pay-side-bar{
@@ -354,6 +358,7 @@ th {
 .pay-tag.left{
 
     width: 35%;
+    font-size: 15px;
 
 
 }
@@ -375,11 +380,21 @@ th {
     border-radius: 5px;
     padding-left: 0;
     font-size: 15px;
+    pointer-events: none;
+    background-color: #8394ad;
+}
+
+.pay-tag.tag-button.enable{
+
+    cursor: pointer;
+    pointer-events: auto;
+    background-color: #6F7E95;
 }
 
 /***************************/
 /* Pay Panel POS until here */
 /***************************/
+
 
 @media (min-width: 768px) {
     .bg-white{
