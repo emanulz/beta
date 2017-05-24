@@ -23,7 +23,10 @@
   width: 100%;
   max-width: 820px;
   min-height: 100%;
-  margin: auto; }
+  margin: auto;
+  overflow-x: auto; }
+  .invoice-panel-main.compact-invoice-on {
+    max-width: 400px; }
 
 .invoice-panel-header {
   display: block;
@@ -35,15 +38,18 @@
   color: white;
   font-size: 16px; }
   .invoice-panel-header i {
-    float: right;
     position: absolute;
-    top: 2px;
-    right: 5px;
+    top: 4px;
     cursor: pointer;
     font-size: 18px; }
-    .invoice-panel-header i:hover {
-      color: gray;
-      font-size: 22px; }
+    .invoice-panel-header i.fa-times {
+      right: 10px; }
+      .invoice-panel-header i.fa-times:hover {
+        color: black; }
+    .invoice-panel-header i.fa-file-text-o {
+      right: 40px; }
+      .invoice-panel-header i.fa-file-text-o:hover {
+        color: black; }
 
 .invoice-panel-container {
   position: absolute;
@@ -53,7 +59,9 @@
   background-color: white;
   padding: 60px 80px 0px 50px;
   overflow-y: auto;
-  overflow-x: hidden; }
+  overflow-x: auto; }
+  .invoice-panel-container.compact-invoice-on {
+    padding: 20px 40px 0px 20px; }
 
 .full-invoice {
   position: relative;
@@ -190,6 +198,144 @@
   justify-content: flex-start;
   margin-top: 20px; }
   .full-invoice-notes h1 {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0; }
+
+.compact-invoice {
+  position: relative;
+  height: 100%;
+  width: 100%; }
+
+.compact-invoice-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .compact-invoice-header-info {
+    flex-grow: 1;
+    text-align: center; }
+    .compact-invoice-header-info h2 {
+      font-size: 14px;
+      margin: 0 0 2px 0;
+      font-weight: bold; }
+    .compact-invoice-header-info h3 {
+      font-size: 11px;
+      margin: 0 0 1px 0;
+      font-weight: normal; }
+
+.compact-invoice-separator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  line-height: 40px;
+  text-transform: uppercase; }
+  .compact-invoice-separator h1 {
+    font-size: 14px;
+    margin: 0 5px;
+    line-height: 40px; }
+  .compact-invoice-separator span {
+    flex-grow: 1;
+    margin-top: 20px;
+    height: 1px;
+    border-top: 1px solid #ccc;
+    vertical-align: middle; }
+
+.compact-invoice-data {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between; }
+  .compact-invoice-data .client-table {
+    border: none;
+    width: 60%; }
+    .compact-invoice-data .client-table th {
+      height: 20px;
+      background: none;
+      color: black;
+      padding: 0; }
+    .compact-invoice-data .client-table td {
+      height: 20px;
+      padding: 0;
+      font-size: 16px;
+      font-weight: bold; }
+  .compact-invoice-data .datenum-table {
+    float: right;
+    width: 40%;
+    border: none; }
+    .compact-invoice-data .datenum-table th {
+      height: 15px;
+      background: none;
+      color: black;
+      padding: 0;
+      font-weight: bold;
+      font-size: 14px; }
+    .compact-invoice-data .datenum-table td {
+      height: 15px;
+      padding: 0;
+      font-size: 14px; }
+
+.compact-invoice-table {
+  margin-top: 20px;
+  border: 1px solid #ccc; }
+  .compact-invoice-table thead tr {
+    height: 30px;
+    background: #1d1d1d;
+    font-size: 13px;
+    font-weight: normal; }
+    .compact-invoice-table thead tr th {
+      background: none;
+      padding: 5px;
+      border-right: 1px solid #ccc; }
+    .compact-invoice-table thead tr :last-child {
+      border-right: none; }
+  .compact-invoice-table tbody tr td {
+    padding: 5px;
+    font-size: 12px;
+    border-right: 1px solid #ccc; }
+  .compact-invoice-table tbody tr :last-child {
+    border-right: none; }
+  .compact-invoice-table .right-in-table {
+    text-align: right; }
+
+.compact-invoice-totals {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end; }
+  .compact-invoice-totals table {
+    width: 45%;
+    border: none; }
+    .compact-invoice-totals table th {
+      width: 55%;
+      text-align: right;
+      padding-right: 20px;
+      background: none;
+      color: black;
+      font-size: 12px; }
+    .compact-invoice-totals table td {
+      padding: 2px;
+      font-size: 12px;
+      text-align: right; }
+  .compact-invoice-totals .total-row th {
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; }
+  .compact-invoice-totals .total-row td {
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; }
+
+.compact-invoice-notes {
+  width: 40%;
+  font-size: 11px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  margin-top: 20px; }
+  .compact-invoice-notes h1 {
     font-size: 12px;
     font-weight: bold;
     padding: 0;

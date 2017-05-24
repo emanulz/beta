@@ -1,5 +1,6 @@
 const stateConst = {
     isVisible:true,
+    isFull: false,
 }
 
 export default function reducer(state=stateConst, action) {
@@ -12,6 +13,11 @@ export default function reducer(state=stateConst, action) {
 
         case "HIDE_INVOICE_PANEL": {
             return {...state, isVisible: false}
+        }//case
+
+        case "TOGGLE_INVOICE_PANEL": {
+            let fullOrNot = state.isFull
+            return {...state, isFull: !fullOrNot}
         }//case
 
 
