@@ -46,6 +46,6 @@
   },
   "scripts": {
     "dev": "webpack --watch --display-error-details",
-    "prod": "NODE_ENV='production' webpack",
+    "prod": "NODE_ENV='production' webpack"
   }
 }

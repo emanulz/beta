@@ -51,7 +51,9 @@
   width: 100%;
   height: calc(100% - 30px);
   background-color: white;
-  padding: 60px 80px 0px 50px; }
+  padding: 60px 80px 0px 50px;
+  overflow-y: auto;
+  overflow-x: hidden; }
 
 .full-invoice {
   position: relative;
@@ -93,5 +95,104 @@
     height: 1px;
     border-top: 1px solid #ccc;
     vertical-align: middle; }
+
+.full-invoice-data {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between; }
+  .full-invoice-data .client-table {
+    border: none;
+    width: 60%; }
+    .full-invoice-data .client-table th {
+      height: 20px;
+      background: none;
+      color: black;
+      padding: 0; }
+    .full-invoice-data .client-table td {
+      height: 20px;
+      padding: 0;
+      font-size: 16px;
+      font-weight: bold; }
+  .full-invoice-data .datenum-table {
+    float: right;
+    width: 40%;
+    border: none; }
+    .full-invoice-data .datenum-table th {
+      height: 15px;
+      background: none;
+      color: black;
+      padding: 0;
+      font-weight: bold;
+      font-size: 14px; }
+    .full-invoice-data .datenum-table td {
+      height: 15px;
+      padding: 0;
+      font-size: 14px; }
+
+.full-invoice-table {
+  margin-top: 20px;
+  border: 1px solid #ccc; }
+  .full-invoice-table thead tr {
+    height: 30px;
+    background: #1d1d1d;
+    font-size: 13px;
+    font-weight: normal; }
+    .full-invoice-table thead tr th {
+      background: none;
+      padding: 5px;
+      border-right: 1px solid #ccc; }
+    .full-invoice-table thead tr :last-child {
+      border-right: none; }
+  .full-invoice-table tbody tr td {
+    padding: 5px;
+    font-size: 12px;
+    border-right: 1px solid #ccc; }
+  .full-invoice-table tbody tr :last-child {
+    border-right: none; }
+  .full-invoice-table .right-in-table {
+    text-align: right; }
+
+.full-invoice-totals {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end; }
+  .full-invoice-totals table {
+    width: 45%;
+    border: none; }
+    .full-invoice-totals table th {
+      width: 55%;
+      text-align: right;
+      padding-right: 20px;
+      background: none;
+      color: black;
+      font-size: 12px; }
+    .full-invoice-totals table td {
+      padding: 2px;
+      font-size: 12px;
+      text-align: right; }
+  .full-invoice-totals .total-row th {
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; }
+  .full-invoice-totals .total-row td {
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; }
+
+.full-invoice-notes {
+  width: 40%;
+  font-size: 11px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  margin-top: 20px; }
+  .full-invoice-notes h1 {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0; }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2Nzcy9wb3NTdHlsZXMuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
