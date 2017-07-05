@@ -3,6 +3,8 @@
  */
 import React from 'react';
 import { connect } from "react-redux"
+var PouchDB = require('pouchdb');
+window.PouchDB = PouchDB;
 
 import { fetchProducts, productSelected, searchProduct } from "./actions"
 
@@ -17,6 +19,22 @@ import { fetchProducts, productSelected, searchProduct } from "./actions"
 export default class Product extends React.Component {
 
     componentWillMount() {
+      const _this = this
+      var localDbProducts = new PouchDB('products')
+      var remoteDbProducts = new PouchDB('http://localhost:5984/products')
+      localDbProducts.sync(remoteDbProducts, {
+        live: true,
+        retry: true
+      }).on('change', function (change) {
+          // yo, something changed!
+          _this.props.dispatch(fetchProducts())
+      }).on('paused', function (info) {
+          // replication was paused, usually because of a lost connection
+      }).on('active', function (info) {
+          // replication was resumed
+      }).on('error', function (err) {
+          // totally unhandled error (shouldn't happen)
+      });
 
       this.props.dispatch(fetchProducts())//fetch products before mount, send dispatch to reducer.
     }

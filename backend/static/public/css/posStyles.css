@@ -245,66 +245,53 @@
 .compact-invoice-data {
   position: relative;
   display: flex;
-  flex-flow: row;
-  justify-content: space-between; }
-  .compact-invoice-data .client-table {
-    border: none;
-    width: 60%; }
-    .compact-invoice-data .client-table th {
-      height: 20px;
-      background: none;
-      color: black;
-      padding: 0; }
-    .compact-invoice-data .client-table td {
-      height: 20px;
-      padding: 0;
-      font-size: 16px;
-      font-weight: bold; }
+  flex-flow: column; }
   .compact-invoice-data .datenum-table {
     float: right;
-    width: 40%;
     border: none; }
     .compact-invoice-data .datenum-table th {
+      width: 18%;
       height: 15px;
       background: none;
       color: black;
       padding: 0;
       font-weight: bold;
-      font-size: 14px; }
+      font-size: 13px; }
     .compact-invoice-data .datenum-table td {
       height: 15px;
       padding: 0;
-      font-size: 14px; }
+      font-size: 13px; }
 
 .compact-invoice-table {
-  margin-top: 20px;
-  border: 1px solid #ccc; }
+  margin-top: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc; }
   .compact-invoice-table thead tr {
     height: 30px;
-    background: #1d1d1d;
+    background: white;
+    color: black;
     font-size: 13px;
     font-weight: normal; }
     .compact-invoice-table thead tr th {
+      color: black;
       background: none;
       padding: 5px;
-      border-right: 1px solid #ccc; }
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc; }
     .compact-invoice-table thead tr :last-child {
       border-right: none; }
   .compact-invoice-table tbody tr td {
     padding: 5px;
-    font-size: 12px;
-    border-right: 1px solid #ccc; }
-  .compact-invoice-table tbody tr :last-child {
-    border-right: none; }
+    font-size: 12px; }
   .compact-invoice-table .right-in-table {
     text-align: right; }
 
 .compact-invoice-totals {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   justify-content: flex-end; }
   .compact-invoice-totals table {
-    width: 45%;
+    width: 60%;
     border: none; }
     .compact-invoice-totals table th {
       width: 55%;
@@ -323,7 +310,7 @@
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc; }
   .compact-invoice-totals .total-row td {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc; }

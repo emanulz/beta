@@ -2,18 +2,44 @@
 //MODULE IMPORTS
 //------------------------------------------------------------------------------------------
 import axios from "axios";
+var PouchDB = require('pouchdb');
 
 //------------------------------------------------------------------------------------------
 //EXPORT FUNCTIONS USED IN COMPONENTS
 //------------------------------------------------------------------------------------------
 
+// //Fetch products from backend
+// export function fetchProducts() {
+//
+//   return function(dispatch) {
+//     axios.get("/sales/api/products/")
+//       .then((response) => {
+//         dispatch({type: "FETCH_PRODUCTS_FULFILLED", payload: response.data})
+//       })
+//       .catch((err) => {
+//         dispatch({type: "FETCH_PRODUCTS_REJECTED", payload: err})
+//       })
+//   }
+// }
+
 //Fetch products from backend
 export function fetchProducts() {
 
   return function(dispatch) {
-    axios.get("/sales/api/products/")
+
+    var localDbProducts = new PouchDB('products')
+
+    localDbProducts.allDocs({
+        include_docs: true,
+        attachments: true
+        })
       .then((response) => {
-        dispatch({type: "FETCH_PRODUCTS_FULFILLED", payload: response.data})
+        console.log(response)
+        const rows = response.rows
+        let data = []
+        rows.forEach(row=>data.push(row.doc))
+
+        dispatch({type: "FETCH_PRODUCTS_FULFILLED", payload: data})
       })
       .catch((err) => {
         dispatch({type: "FETCH_PRODUCTS_REJECTED", payload: err})
