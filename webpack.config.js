@@ -36,6 +36,7 @@ module.exports = {
   plugins: debug ?
                 [new ExtractTextPlugin({filename:"./css/[name].css", allChunks: true}),
                 new LiveReloadPlugin(),]
+
                 :
                 [
                 new webpack.DefinePlugin({

@@ -21,10 +21,7 @@ import Footer from './footer/footer.jsx'
 import PayPanel from './pay/payPanel.jsx'
 import InvoicePanel from './invoice/InvoicePanel/invoicePanel.jsx'
 
-
-
-
-
+//store
 import store from "./store.js"
 
 
@@ -44,6 +41,7 @@ ReactDOM.render(<Provider store={store}>
                 document.getElementById('main-content')
 );
 
+//footer fixed
 ReactDOM.render(<Provider store={store}>
 
                     <Footer></Footer>

@@ -10,6 +10,8 @@ export function searchClient(val, clients){
     let name
     let matchs = []
 
+    console.log(clients)
+
     $.each(clients, function(i) {
 
         name = clients[i].name.toString() + ' ' +clients[i].last_name.toString();

@@ -2,8 +2,9 @@
  * Module dependencies
  */
 import React from 'react';
-import { connect } from "react-redux"
+var PouchDB = require('pouchdb');
 
+import { connect } from "react-redux"
 import { fetchClients, clientSelected, searchClient } from "./actions"
 
 @connect((store) => {
@@ -15,8 +16,24 @@ import { fetchClients, clientSelected, searchClient } from "./actions"
 export default class Clients extends React.Component {
 
     componentWillMount() {
+        const _this = this
+        var localDbClients = new PouchDB('clients')
+        var remoteDbClients = new PouchDB('http://localhost:5984/clients')
+        localDbClients.sync(remoteDbClients, {
+          live: true,
+          retry: true
+        }).on('change', function (change) {
+            // yo, something changed!
+            _this.props.dispatch(fetchClients())
+        }).on('paused', function (info) {
+            // replication was paused, usually because of a lost connection
+        }).on('active', function (info) {
+            // replication was resumed
+        }).on('error', function (err) {
+            // totally unhandled error (shouldn't happen)
+        });
 
-      this.props.dispatch(fetchClients())//fetch clients before mount, send dispatch to reducer.
+        this.props.dispatch(fetchClients())//fetch clients before mount, send dispatch to reducer.
     }
 
     inputKeyPress(ev){

@@ -171,8 +171,6 @@ th {
     background-color: rgba(145, 145, 145, 0.67);
     background-size:100% 100%;
     transition: all 0.3s ease-in-out;
-
-
 }
 
 .pay-panel.is-visible{
@@ -185,7 +183,7 @@ th {
 
 .pay-panel-main{
 
-    position: absolute;;
+    position: absolute;
     width: 80%;
     left:10%;
     background-color: rgb(214, 214, 214);
@@ -332,64 +330,7 @@ th {
     display: inline-block;
 }
 
-.pay-side-bar{
-    position: absolute;
-    top: 0;
-    left:50%;
-    display: inline-block;
-    width: 49%;
-    height: 100%;
-    border: 1px solid gray;
-}
 
-.pay-tag{
-    display: inline-block;
-    width: 40%;
-    height: 50px;
-    line-height: 50px;
-    padding-left: 5px;
-    background-color: #6F7E95;
-    font-size: 20px;
-    color: white;
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
-
-.pay-tag.left{
-
-    width: 35%;
-    font-size: 15px;
-
-
-}
-
-.pay-tag.right{
-
-    width: 55%;
-    margin-left: 2%;
-
-
-}
-
-.pay-tag.tag-button{
-    width: 30%;
-    float: right;
-    margin-right:8%;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 5px;
-    padding-left: 0;
-    font-size: 15px;
-    pointer-events: none;
-    background-color: #8394ad;
-}
-
-.pay-tag.tag-button.enable{
-
-    cursor: pointer;
-    pointer-events: auto;
-    background-color: #6F7E95;
-}
 
 /***************************/
 /* Pay Panel POS until here */
